@@ -1,0 +1,13 @@
+import styled from "styled-components";
+
+export const StyleHeader= styled.header`
+width: 100%;
+display: flex;
+align-items: center;
+justify-content:space-evenly;
+margin: 0;
+height: 6rem;
+padding: 2rem 0;
+
+
+`
