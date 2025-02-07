@@ -1,5 +1,5 @@
 import Header from "./components/Header/Header.jsx"
-import { Global } from "../../StyleGlobal.jsx"
+import { Global } from "./StyleGlobal.jsx"
 import Banner from "./components/Banner/Banner.jsx"
 import Footer from "./components/Footer/Footer.jsx"
 import Highlight from "./components/Highlight/Highlight.jsx"
