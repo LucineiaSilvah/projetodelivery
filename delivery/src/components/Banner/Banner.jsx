@@ -22,7 +22,7 @@ const Banner = () => {
    
             
         <StyleCenter>
-     <Button></Button>
+     <Button color={"#B11621"}>Peca agora e experimente</Button>
       <img className='star' src={star} alt="" />
       
        <span>5 estrelas no ifood</span>

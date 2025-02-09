@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleButton } from '../styles/StyleButton';
 
-const Button = () => {
+const Button = ({children,color}) => {
   return (
 
-    <StyleButton>Peça Agora e experimente</StyleButton>
+    <StyleButton color={color}>{children}</StyleButton>
 
   
  

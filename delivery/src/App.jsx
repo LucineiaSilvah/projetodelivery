@@ -1,9 +1,8 @@
-import Header from "./components/Header/Header.jsx"
-import { Global } from "./StyleGlobal.jsx"
-import Banner from "./components/Banner/Banner.jsx"
-import Footer from "./components/Footer/Footer.jsx"
-import Highlight from "./components/Highlight/Highlight.jsx"
-import Sabores from "./components/Sabores/Sabores.jsx"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home/Home.jsx";
+import Cart from "./pages/Cart/Cart.jsx";
+
 
 
 
@@ -12,13 +11,14 @@ function App() {
 
   return (
     <>
-   <Global/>
-   <Header/>
-  <Banner/>
-  <Highlight/>
-  <Sabores/>
+ <Router>
+  <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/cart" element={<Cart/>}/>
 
-<Footer/>
+   
+  </Routes>
+ </Router>
 
     </>
   )

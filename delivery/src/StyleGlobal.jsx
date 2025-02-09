@@ -14,7 +14,7 @@ body {
   background-color: #f8f5f5;
   color: #333;
   overflow-x: hidden;
-
+  position: relative;
 }
 
 /* Remove decoração de links */
