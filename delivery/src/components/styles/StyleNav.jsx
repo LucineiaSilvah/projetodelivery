@@ -11,6 +11,7 @@ export const StyleNav= styled.nav`
   width: 100%;
   display: flex;
   align-items: center;
+
   justify-content: space-around;
  }
  a:hover{
@@ -19,16 +20,16 @@ export const StyleNav= styled.nav`
  div{
   display: flex;
  }
- div + div{
- 
+.menu{
+  display: none;
+}
+ span{
+  
   border-radius: 5px;
   padding: .7rem 2rem;
-  border: 1px solid #000;
- }
- span{
   display:flex;
   align-items: center;
-
+  border: 1px solid #000;
  }
  input{
   padding: 1rem;
@@ -41,4 +42,28 @@ export const StyleNav= styled.nav`
   border-radius: 5px;
   
  }
+ @media (max-width: 768px) {
+
+  ul{
+ flex-direction: column;
+ position: absolute;
+ left: 0;
+ height: 260px;
+ transition: 1s ease-in;
+ top: 5.5rem;
+ width: 150px;
+ background:#F8F5F5;
+ align-items: start;
+ display: none;
+ }
+ .menu{
+  display: flex;
+align-items: center;
+padding: .5rem;
+ }
+ .busca{
+  display: none;
+ }
+  }
+
 `

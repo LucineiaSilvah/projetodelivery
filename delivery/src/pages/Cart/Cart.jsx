@@ -1,10 +1,18 @@
-import React from 'react';
+import {  Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import { Global } from "../../StyleGlobal";
 import Button from '../../components/Button/Button';
 import { StyleCart } from './StyleCart';
 
 const Cart = () => {
+ const location = useLocation()
+
+ const { data } = location.state || {};
+  const [itens,setItens] = useState([])
+
+
+
   return (
     <>
     <Global/>
@@ -17,7 +25,8 @@ const Cart = () => {
   
     <div>
       <p >Não tem pratos no carrinho momento</p>
-    <span>Total: R$ 0,00</span>
+   
+    <span>Total: R$ </span>
     <Button color={'#0A741E'}>enviar pedido</Button>
     </div>
     </StyleCart>

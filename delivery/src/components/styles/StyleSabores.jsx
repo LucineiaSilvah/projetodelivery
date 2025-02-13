@@ -22,5 +22,11 @@ div{
 div img{
   width: 100%;
 }
+@media (max-width: 768px) {
+ div{
+  grid-template-columns: 1fr;
  
+ }
+
+  }
 `

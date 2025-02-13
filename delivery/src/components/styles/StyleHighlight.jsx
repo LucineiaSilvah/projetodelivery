@@ -10,15 +10,22 @@ h1{
 }
 .swiper-button-next,
 .swiper-button-prev {
-  color: red; /* Cor desejada */
+  background: red;
+  color: #f8f5f5; 
+  height: 60px;
+  border-radius: 50%;
+  width: 60px;
+scale: 0.7;
+
 }
 
 @media (max-width: 768px) {
 height: auto;
-padding: 2rem;
+padding: 1rem;
+justify-content: center;
  .swiper-wrapper {
   display: flex;
- gap: 10px;
+
 
 }
 

@@ -52,7 +52,10 @@ padding: 1rem;
  }
   @media (max-width: 768px) {
     flex-direction: column;
-   width: 350px;
+   width: auto;
+img{
+width: 100%;
+ }
 
   }
 `

@@ -2,14 +2,16 @@ import React from "react";
 import { StyleHighlight } from "../styles/StyleHighlight";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
 import { imagens } from "../../capas/destaque";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {  SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Card from "../Card/Card";
+
+import { StyledSwiper } from "../styles/StyleSwiper";
 const Highlight = () => { 
- console.log(imagens[0]);
+
  
  const itens = [
   {
@@ -76,35 +78,36 @@ const Highlight = () => {
       <StyleHighlight>
         <h1>Destaque</h1>
 
-        <div>
-          <Swiper
-            // install Swiper modules
-            modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
-            spaceBetween={50}
-          
-            slidesPerView={2}
-            navigation
-            autoplay
-         
-           
-          
-          >
-            {itens.map((item) => (
+        <StyledSwiper 
+         modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
+        navigation
+        autoplay
+         spaceBetween={60}
+         breakpoints={{
+           320: { slidesPerView: 1 },
+           768: { slidesPerView: 2 },
+           1024: { slidesPerView: 2 },
+         }}
+        
+        
+        >
+        {itens.map((item) => (
               <SwiperSlide>
                 <Card 
+
                 key={item.nome}
                 nome={item.nome} 
                 imagem={item.imagem} 
                 descricao={item.descricao}
                 tamanho={item.tamanho}
                 preco={item.preco}
+                onClick={()=>toGoCart(item)}
                 />
                 
               
               </SwiperSlide>
             ))}
-          </Swiper>
-        </div>
+        </StyledSwiper>
       </StyleHighlight>
     </>
   );

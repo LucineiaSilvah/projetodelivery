@@ -1,6 +1,15 @@
+import { useState } from "react";
 import { StyleCard } from "../styles/StyleCard";
 
-const Card = ({id,nome,imagem,descricao,tamanho,preco}) => {
+const Card = ({id,nome,imagem,descricao,tamanho,preco,onClick}) => {
+
+  
+
+const handleItems = (item)=>{
+console.log(item);
+
+}
+ 
   return (
     <>
       <StyleCard >
@@ -19,7 +28,7 @@ const Card = ({id,nome,imagem,descricao,tamanho,preco}) => {
 </svg>
 {tamanho}</p>
          <hr />
-        <span> <p className="price">R$ {preco}</p> <p className="mais"><svg 
+        <span> <p className="price">R$ {preco}</p> <p className="mais" onClick={onClick}> <svg 
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 0 24 24" 
     width="48" 
