@@ -8,6 +8,9 @@ justify-content:space-evenly;
 margin: 0;
 height: 6rem;
 padding: 2rem 0;
+@media (max-width: 768px) {
 
+
+}
 
 `

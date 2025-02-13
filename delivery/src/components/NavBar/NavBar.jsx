@@ -1,15 +1,26 @@
 import { StyleNav } from "../styles/StyleNav";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const NavBar = () => {
   const navigate = useNavigate()
 
+
+  const [openMenu,setOpenMenu]= useState(false)
+
+  const handleMenu=()=>{
+    if(openMenu === false){
+   setOpenMenu(true)
+   }else{
+   	setOpenMenu(false)
+   }
+   }
   const handleToGoCart = ()=>{
     navigate('/cart')
   }
   return (
     <>
       <StyleNav>
-        <ul>
+        <ul className={openMenu ? "open": "close"}>
           <li>
             <a href="#">Destaques</a>
           </li>
@@ -27,18 +38,31 @@ const NavBar = () => {
           </li>
         </ul>
         <div>
-          <div className="menu">
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 100 80"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="100" height="10"></rect>
-              <rect y="30" width="100" height="10"></rect>
-              <rect y="60" width="100" height="10"></rect>
-            </svg>
+          <div className="menu" onClick={handleMenu}>
+          {
+          	openMenu ?
+
+(
+	<svg width="25" height="25" viewBox="0 0 50 50">
+	  <text x="10" y="35" font-size="30" font-family="Arial" fill="black">X</text>
+	</svg>
+	
+)
+          	 :
+(<svg
+          	                width="25"
+          	                height="25"
+          	                viewBox="0 0 100 80"
+          	                fill="currentColor"
+          	                xmlns="http://www.w3.org/2000/svg"
+          	              >
+          	              <rect width="100" height="10"></rect>
+          	              <rect y="30" width="100" height="10"></rect>
+          	             <rect y="60" width="100" height="10"></rect>
+          	            </svg>)
+          	            
+          }
+           
           </div>
           <div className="busca">
             <input

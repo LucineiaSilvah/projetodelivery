@@ -10,6 +10,7 @@ gap: .6rem;
 overflow-x: hidden;
 
 @media (max-width: 768px) {
+
   padding:1rem;
   h1{
     font-size: 1.6rem;
@@ -17,9 +18,11 @@ overflow-x: hidden;
   h2{
     text-align: center;
     font-size: 1rem;
+    margin-bottom:2.5rem;
   }
 
    span{
+   
     font-size: .8rem;
 
 }

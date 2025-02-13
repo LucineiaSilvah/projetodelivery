@@ -49,12 +49,26 @@ export const StyleNav= styled.nav`
  position: absolute;
  left: 0;
  height: 260px;
- transition: 1s ease-in;
  top: 5.5rem;
- width: 150px;
+ width: 100%;
  background:#F8F5F5;
  align-items: start;
- display: none;
+
+transition: max-height 1ms  ease-in-out;
+opacity:0;
+
+ }
+ 
+ .open{
+ max-height: 250px;
+ opacity:1;
+ 	display: flex;
+z-index:2;
+fonte-size:16px;
+ }
+.close ul{
+   display:none;
+   	
  }
  .menu{
   display: flex;
