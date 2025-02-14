@@ -3,25 +3,13 @@ import Card from "../Card/Card";
 import { StyleSabores } from "../styles/StyleSabores";
 import { useNavigate } from 'react-router-dom'
 import { StyleButtonCart } from "../styles/StyleButtonCart";
-const Sabores = () => {
+const Sabores = ({addToCart}) => {
 
  const [unidades,setUnidades] = useState(0)
  const [cont,setcont] = useState(0)
-const [data,setData] = useState({})
+const [cart,setCart] = useState([])
  const navigate = useNavigate();
 
-  const handleCart = ()=>{
-
-    navigate("/cart")
-  }
-  const toGoCart = (p) => {
-    setData(p);
-    setUnidades(prev => prev + p.qnt);
-    setcont(prev => prev + 1);
-  
-    handleCart(p); // Chamando diretamente com `p`
-  };
-  
 
   const menu = {
     escolhaSabor: [
@@ -32,9 +20,7 @@ const [data,setData] = useState({})
         tamanho: "Grande de 8 pedaços",
         preco: 30.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Pizzas Salgadas",
@@ -43,9 +29,7 @@ const [data,setData] = useState({})
         tamanho: "Grande de 8 pedaços",
         preco: 30.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
     ],
     salgadas: [
@@ -57,9 +41,7 @@ const [data,setData] = useState({})
         preco: 32.90
         ,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Pizza Portuguesa",
@@ -68,9 +50,7 @@ const [data,setData] = useState({})
         tamanho: "Grande de 8 pedaços",
         preco: 34.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Pizza Pepperoni",
@@ -79,9 +59,7 @@ const [data,setData] = useState({})
         tamanho: "Grande de 8 pedaços",
         preco: 34.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Pizza Marguerita",
@@ -90,9 +68,7 @@ const [data,setData] = useState({})
         tamanho: "Grande de 8 pedaços",
         preco: 34.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Pizza Queijo",
@@ -101,9 +77,7 @@ const [data,setData] = useState({})
         tamanho: "Grande de 8 pedaços",
         preco: 34.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Pizza Calabresa",
@@ -112,9 +86,7 @@ const [data,setData] = useState({})
         tamanho: "Grande de 8 pedaços",
         preco: 34.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
     ],
     doces: [
@@ -125,9 +97,7 @@ const [data,setData] = useState({})
         tamanho: "Grande de 8 pedaços",
         preco: 35.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Pizza de Banana com Canela",
@@ -136,9 +106,7 @@ const [data,setData] = useState({})
         tamanho: "Grande de 8 pedaços",
         preco: 33.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       }
     ],
     brotos: [
@@ -149,9 +117,7 @@ const [data,setData] = useState({})
         tamanho: "Broto (4 pedaços)",
         preco: 19.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Broto Quatro Queijos",
@@ -160,9 +126,7 @@ const [data,setData] = useState({})
         tamanho: "Broto (4 pedaços)",
         preco: 22.90,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       }
     ],
     bebidas: [
@@ -173,9 +137,7 @@ const [data,setData] = useState({})
         tamanho:"350ml",
         preco: 3.00,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Garrafa 600ml",
@@ -184,9 +146,7 @@ const [data,setData] = useState({})
         tamanho:"600ml",
         preco: 7.50,
         qnt:1,
-        subtotal() {
-          return this.preco * this.qnt;
-        }
+      
       },
       {
         nome: "Garrafa 600ml",
@@ -195,6 +155,7 @@ const [data,setData] = useState({})
         tamanho:"2lt",
         preco: 14.50,
         qnt:1,
+      
         
         
       },
@@ -211,7 +172,7 @@ const [data,setData] = useState({})
       <div>
       
       {menu.escolhaSabor.map((item,index)=>(
-  <Card key={item.nome} nome={item.index} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho} preco={item.preco} onClick={()=>toGoCart(item)} />
+  <Card key={index} nome={item.nome} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho} preco={item.preco} onClick={()=>addToCart(item)} />
 ))}
       </div>
       </div>
@@ -221,7 +182,7 @@ const [data,setData] = useState({})
       <div>
 
       {menu.salgadas.map((item,index)=>(
-  <Card key={item.nome} nome={item.index} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho} preco={item.preco}  onClick={()=>toGoCart(item)} />
+  <Card key={index} nome={item.nome} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho} preco={item.preco}  onClick={()=>addToCart(item)} />
   
 ))}
       </div>
@@ -232,7 +193,7 @@ const [data,setData] = useState({})
       <div className="box">
 
       {menu.doces.map((item,index)=>(
-  <Card key={item.index} nome={item.index} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho}  preco={item.preco}  onClick={()=>toGoCart(item)} />
+  <Card key={index} nome={item.nome} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho}  preco={item.preco}  onClick={()=>addToCart(item)} />
 ))}
       </div>
       </div>
@@ -241,8 +202,8 @@ const [data,setData] = useState({})
       <h2>Brotos</h2>
       <div className="Box">
 
-      {menu.brotos.map((item)=>(
-  <Card width={'200px'} key={item.index} nome={item.nome} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho} preco={item.preco}  onClick={()=>toGoCart(item)}/>
+      {menu.brotos.map((item,index)=>(
+  <Card width={'200px'} key={index} nome={item.nome} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho} preco={item.preco}  onClick={()=>addToCart(item)}/>
 ))}
       </div>
       </div>
@@ -252,7 +213,7 @@ const [data,setData] = useState({})
       <div>
 
       {menu.bebidas.map((item,index)=>(
-  <Card key={item.index} nome={item.nome} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho} preco={item.preco}  onClick={()=>toGoCart(item)} />
+  <Card key={index} nome={item.nome} imagem={item.imagem} descricao={item.descricao} tamanho={item.tamanho} preco={item.preco}  onClick={()=>addToCart(item)} />
 ))}
       </div>
       </div>
@@ -261,7 +222,7 @@ const [data,setData] = useState({})
 
     </StyleSabores>
     <div>
-    <StyleButtonCart onClick={()=> handleCart()}>
+    {/* <StyleButtonCart onClick={()=> handleCart()}>
       
       <span>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -274,7 +235,7 @@ const [data,setData] = useState({})
     
   </p>
           </span>
-      </StyleButtonCart>
+      </StyleButtonCart> */}
     </div>
     </>
     

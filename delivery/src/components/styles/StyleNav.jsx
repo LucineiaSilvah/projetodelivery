@@ -64,7 +64,7 @@ opacity:0;
  opacity:1;
  	display: flex;
 z-index:2;
-fonte-size:16px;
+
  }
 .close ul{
    display:none;

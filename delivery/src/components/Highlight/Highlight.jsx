@@ -91,11 +91,11 @@ const Highlight = () => {
         
         
         >
-        {itens.map((item) => (
+        {itens.map((item,index) => (
               <SwiperSlide>
                 <Card 
 
-                key={item.nome}
+                key={index}
                 nome={item.nome} 
                 imagem={item.imagem} 
                 descricao={item.descricao}

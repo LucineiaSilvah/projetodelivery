@@ -1,36 +1,36 @@
-import {  Link, useLocation } from 'react-router-dom';
-import React, { useState } from 'react';
-import Header from '../../components/Header/Header';
-import { Global } from "../../StyleGlobal";
-import Button from '../../components/Button/Button';
 import { StyleCart } from './StyleCart';
+import { StyleButtonCart } from "../../components/styles/StyleButtonCart";
+import { useNavigate } from 'react-router-dom';
+const Cart = ({ cart }) => {
 
-const Cart = () => {
- const location = useLocation()
-
- const { data } = location.state || {};
-  const [itens,setItens] = useState([])
-
-
-
+  const navigate = useNavigate()
+  const handleClick = () =>{
+    navigate("/cart",{
+      state: { cart}
+    })
+  }
   return (
-    <>
-    <Global/>
-    
-      <Header/>
     <StyleCart>
+      <h1>Seu Carrinho</h1>
 
-     <h1>Seu carrinho</h1>
-     <p>Selecione a quantidade e finalize o pedido direto no Whatsapp</p>
-  
-    <div>
-      <p >Não tem pratos no carrinho momento</p>
-   
-    <span>Total: R$ </span>
-    <Button color={'#0A741E'}>enviar pedido</Button>
-    </div>
+      {cart.length === 0 ? (
+        <p>Carrinho vazio</p>
+      ) : (
+        <div>
+          {cart.map((item, index) => (
+            <p key={index}>
+              {item.nome}: R$ {item.preco}
+            </p>
+          ))}
+        </div>
+      )}
+
+      {cart.length > 0 && (
+        <StyleButtonCart>
+          <button onClick={handleClick}> {cart.length}</button>
+        </StyleButtonCart>
+      )}
     </StyleCart>
-    </>
   );
 }
 
