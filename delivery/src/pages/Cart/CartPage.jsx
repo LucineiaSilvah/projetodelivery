@@ -12,7 +12,7 @@ const StylePage = styled.section`
   background:#232F41;
   font-size: 1.5rem;
   color:#f9f6f6;
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
