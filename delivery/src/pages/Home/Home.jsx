@@ -25,9 +25,9 @@ setCart([...cart,p])
       <Global />
       <Header />
       <Banner />
-      <Highlight />
+     
       <Sabores addToCart={addToCart} />
-     <Cart cart={cart}/>
+      <Cart cart={cart}/>
       <Whats />
       <Footer />
     </StyleHome>

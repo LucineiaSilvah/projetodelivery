@@ -6,6 +6,7 @@ import { Global } from '../../StyleGlobal';
 import Footer from '../../components/Footer/Footer';
 import { useLocation } from 'react-router-dom';
 import Card from '../../components/Card/Card';
+import Cart from './Cart';
 
 const StylePage = styled.section`
   width: 100%;
@@ -77,7 +78,9 @@ const CartPage = () => {
     <>
       <Header />
       <Global />
+      <Cart cart={cart}/>
       <StylePage>
+     
         <h1>Seu carrinho</h1>
         <p>Selecione a quantidade e finalize o pedido direto no Whatsapp</p>
 

@@ -1,15 +1,22 @@
 import styled from 'styled-components'
 
 export const StyleCart= styled.div`
-width: 140px;
+width: 100px;
 height: 100px;
 justify-content: 400px;
 position: fixed;
-right: 1rem;
-top: 0;
-color: red;
-background-color: #eae3ea46;
+right: 2rem;
+top: 2rem;
 z-index: 3;
+
+span{
+
+  border-radius: 5px;
+  padding: .7rem 2rem;
+  display:flex;
+  align-items: center;
+  border: 1px solid #000;
+ }
 `
 // export const StyleCart = styled.section`
 // width: 100%;

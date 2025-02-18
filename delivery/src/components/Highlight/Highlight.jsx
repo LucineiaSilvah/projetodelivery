@@ -10,7 +10,7 @@ import "swiper/css/scrollbar";
 import Card from "../Card/Card";
 
 import { StyledSwiper } from "../styles/StyleSwiper";
-const Highlight = () => { 
+const Highlight = ({addToCart}) => { 
 
  
  const itens = [
@@ -101,7 +101,7 @@ const Highlight = () => {
                 descricao={item.descricao}
                 tamanho={item.tamanho}
                 preco={item.preco}
-                onClick={()=>toGoCart(item)}
+                onClick={()=>addToCart(item)}
                 />
                 
               

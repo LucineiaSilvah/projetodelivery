@@ -16,7 +16,7 @@ const Header = () => {
   <StyleTitle>
     <img src={logo} width={'200px'} alt="logo pizza ninja" onClick={handleBackToHome} />
   </StyleTitle>
-  <NavBar/>
+  <NavBar />
 </StyleHeader>
 
    </>

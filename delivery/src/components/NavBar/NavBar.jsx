@@ -1,6 +1,7 @@
 import { StyleNav } from "../styles/StyleNav";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
 const NavBar = () => {
   const navigate = useNavigate()
 
@@ -86,7 +87,9 @@ const NavBar = () => {
         </div>
 
         <div>
+          
           <span onClick={handleToGoCart}>
+           
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -102,7 +105,7 @@ const NavBar = () => {
               <circle cx="20" cy="21" r="1"></circle>
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H5"></path>
             </svg>
-            :0
+            :{0}
           </span>
         </div>
       </StyleNav>

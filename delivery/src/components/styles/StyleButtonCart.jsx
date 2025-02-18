@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StyleButtonCart = styled.button`
- background-color: #C11823;
+
+  background-color: #C11823;
  width: 80px;
  height: 80px;
  border-radius: 50%;
@@ -9,6 +10,9 @@ export const StyleButtonCart = styled.button`
  bottom: 2rem;
  right: 2rem;
 z-index: 2;
+button{
+  background-color: #C11823;
+}
 p{
   width: 25px;
   display: flex;
@@ -21,4 +25,5 @@ p{
   right: .2rem;
   background: #d4d0d0;
 }
+
 `

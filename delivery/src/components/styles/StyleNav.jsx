@@ -24,7 +24,7 @@ export const StyleNav= styled.nav`
   display: none;
 }
  span{
-  
+  opacity: 0;
   border-radius: 5px;
   padding: .7rem 2rem;
   display:flex;
