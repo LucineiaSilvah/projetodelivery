@@ -4,8 +4,9 @@ export const StyleAnimation= styled.div`
  background: #B11620;
  color: rgb(255, 255, 255);
  width: max-content;
+
  display: flex;
- margin: 3rem 0;
+
  justify-content: space-between;
 
 div{
@@ -13,7 +14,7 @@ div{
   gap: 2rem;
   padding: 1rem;
 
-  margin-left: 1100px;
+  margin-left: 850px;
 }
 @media (max-width: 768px) {
 

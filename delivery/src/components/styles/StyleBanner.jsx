@@ -7,7 +7,7 @@ justify-content: center;
 flex-direction: column;
 padding:4rem ;
 gap: .6rem;
-overflow-x: hidden;
+overflow: hidden;
 
 @media (max-width: 768px) {
 

@@ -5,9 +5,11 @@ export  const StyleCenter=styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
+justify-content: space-between;
+
 img{
-  margin-top: 1rem;
+  margin-top: .8rem;
+  
 }
 span{
   opacity: .6;

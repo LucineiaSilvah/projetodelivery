@@ -7,6 +7,7 @@ import { StyleCenter } from '../styles/StyleCenter';
 import Button from '../Button/Button';
 import mockup from '../../assets/mockup-mobile.webp'
 import { StyleAnimation } from '../styles/StyleAnimation';
+import AnimatedText from './AnimationText';
 const Banner = () => {
   return (
 
@@ -27,29 +28,10 @@ const Banner = () => {
       
        <span>5 estrelas no ifood</span>
 
-       <img  src={mockup} alt="" />
+       <img style={{width:'80%'}} src={mockup} alt="" />
 
-       <StyleAnimation>
-        <div>
-        <p>entrega rápida</p>
-        <p>-</p>
-        <p>Pedido online</p>
-        <p>-</p>
-        <p>varios sabores</p>
-        <p>-</p>
-        <p>qualidade garantida</p>
-        <p>-</p>
-        <p>entrega rápida</p>
-        <p>-</p>
-        <p>Pedido online</p>
-        <p>-</p>
-        <p>entrega rápida</p>
-        <p>-</p>
-        <p>vários sabores</p>
-        </div>
-       
-  
-       </StyleAnimation>
+    
+       <AnimatedText/>
         </StyleCenter>
  
       </StyleBanner>
